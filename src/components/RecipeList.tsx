@@ -11,14 +11,15 @@ export function RecipeList({ recipes, favorites, onToggleFavorite }: RecipeListP
   // Estado vazio: a busca/filtro não encontrou nada
   if (recipes.length === 0) {
     return (
-      <p className="py-16 text-center text-sm text-stone-500">
-        Nenhuma receita encontrada. Tente outra busca ou culinária.
-      </p>
+      <div className="card py-16 text-center">
+        <p className="font-display text-xl font-semibold text-ink">Nenhuma receita encontrada</p>
+        <p className="mt-1 text-sm text-ink-soft">Tente outra busca ou culinária.</p>
+      </div>
     )
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {recipes.map((recipe) => (
         <RecipeCard
           key={recipe.id}
