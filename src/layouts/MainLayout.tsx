@@ -7,11 +7,11 @@ export function MainLayout() {
     <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <Outlet />
       </main>
 
-      <footer className="border-t border-stone-200 py-6 text-center text-xs text-stone-400">
+      <footer className="border-t border-cream-dark py-6 text-center text-xs text-ink-soft">
         Receitário · Checkpoint 5 · FIAP · Artur Esteves — RM569450
       </footer>
     </div>

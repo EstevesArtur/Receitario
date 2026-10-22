@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { HeartIcon } from '@/components/icons'
 import { RecipeList } from '@/components/RecipeList'
 import { RecipeGridSkeleton } from '@/components/RecipeCardSkeleton'
 import { useRecipes } from '@/hooks/useRecipes'
@@ -36,25 +37,33 @@ export function CatalogPage() {
 
   return (
     <section>
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Catálogo de receitas</h1>
-        <span className="rounded-full bg-orange-100 px-3 py-1 text-sm font-medium text-orange-700">
-          ❤️ {favorites.length} favoritas
+      {/* Faixa de título */}
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="mb-1 text-xs font-semibold tracking-widest text-pepper uppercase">
+            {recipes.length > 0 ? `${recipes.length} receitas` : 'Catálogo'}
+          </p>
+          <h1 className="text-4xl font-bold tracking-tight text-ink">O que vamos cozinhar hoje?</h1>
+        </div>
+        <span className="inline-flex items-center gap-2 rounded-full bg-amber-light px-4 py-2 text-sm font-semibold text-ink">
+          <HeartIcon className="h-4 w-4 text-pepper" />
+          {favorites.length} {favorites.length === 1 ? 'favorita' : 'favoritas'}
         </span>
       </div>
 
-      <div className="mb-6 flex flex-col gap-3 sm:flex-row">
+      {/* Busca + filtro */}
+      <div className="mb-8 flex flex-col gap-3 sm:flex-row">
         <input
           type="search"
           placeholder="Buscar por nome..."
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          className="flex-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"
+          className="input flex-1"
         />
         <select
           value={cuisine}
           onChange={(event) => setCuisine(event.target.value)}
-          className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"
+          className="input sm:w-56"
         >
           {cuisines.map((option) => (
             <option key={option} value={option}>
@@ -66,7 +75,7 @@ export function CatalogPage() {
 
       {/* Ordem importa: erro → carregando → conteúdo */}
       {error ? (
-        <p className="rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+        <p className="rounded-xl border border-amber bg-amber-light px-4 py-3 text-sm text-ink">
           {error} Verifique sua conexão e recarregue a página.
         </p>
       ) : loading ? (
