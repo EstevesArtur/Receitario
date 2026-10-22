@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+/* Utilitários reaproveitados em várias telas (mesmo padrão do NexStore) */
+@utility card {
+  @apply rounded-xl border border-stone-200 bg-white shadow-sm;
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-orange-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-700;
+}
+
+body {
+  @apply bg-stone-50 text-stone-800;
+}
