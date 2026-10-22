@@ -1,14 +1,41 @@
 @import 'tailwindcss';
 
-/* Utilitários reaproveitados em várias telas (mesmo padrão do NexStore) */
+/* ============================================================
+   TEMA "COZINHA QUENTE" · Receitário v1.1
+   Creme de fundo, vermelho-pimenta como cor principal, âmbar
+   como acento e header escuro que ancora a página.
+   ============================================================ */
+@theme {
+  --color-cream: #fff8ee;
+  --color-cream-dark: #f6ead6;
+  --color-pepper: #d7263d;
+  --color-pepper-dark: #b01c30;
+  --color-amber: #f4a259;
+  --color-amber-light: #fde7cc;
+  --color-ink: #1f1a17;
+  --color-ink-soft: #5c524c;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ---------- Utilitários reaproveitados ---------- */
 @utility card {
-  @apply rounded-xl border border-stone-200 bg-white shadow-sm;
+  @apply rounded-2xl border border-cream-dark bg-white shadow-sm;
 }
 
 @utility btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-orange-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-700;
+  @apply inline-flex items-center justify-center rounded-full bg-pepper px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-pepper-dark;
+}
+
+@utility input {
+  @apply rounded-xl border border-cream-dark bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft/60 focus:border-pepper focus:outline-none focus:ring-2 focus:ring-pepper/20;
 }
 
 body {
-  @apply bg-stone-50 text-stone-800;
+  @apply bg-cream font-body text-ink;
+}
+
+h1, h2 {
+  @apply font-display;
 }
