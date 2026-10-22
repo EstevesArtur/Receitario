@@ -42,7 +42,7 @@ Regras atendidas:
 
 - React 19 + Vite + TypeScript
 - React Router (rotas, rota dinâmica e catch-all)
-- Tailwind CSS v4
+- Tailwind CSS v4 com tema próprio (@theme) — paleta "cozinha quente" e fontes Fraunces + Inter
 - Deploy na Vercel com `vercel.json` (rewrite de SPA)
 
 ## ▶️ Como rodar
