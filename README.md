@@ -15,7 +15,7 @@ Catálogo de receitas em **React + Vite + TypeScript** que consome a API públic
 ## 🔗 Links
 
 - **Repositório:** https://github.com/EstevesArtur/Receitario
-- **Deploy (Vercel):** _em breve — preenchido na publicação_
+- **Deploy (Vercel):** https://receitario-mauve.vercel.app
 
 ## 🖼️ Tela do catálogo
 
